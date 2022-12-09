@@ -64,6 +64,37 @@ Program output: The program should output the terminal(leaf) nodes of the parse 
 ###### Output
 ![Parsing Example](https://user-images.githubusercontent.com/90295968/206790840-433aeaa6-56bf-4c74-89ae-dc41fce3b6ff.jpg)
 ***************************************************************************************************
-### Assignment-3  ( Code Generator )
+### Assignment-3  ( Analyzing )
+
+Write a program in C++ that implements the code generation step of our custom compiler of the TINY programming language.
+
+Program input: for this assignment you have the freedom to either take the path of the source code file written in the TINY programming language as an input or hardcode it within your code; You can find an example of an input file in the file called `input.txt`.
+
+Program output: The program should output 
+
+- First: The symbol table of the code basically containing all the named variables in the following format for each variable
+
+[Var=variable name][Mem=initial value of the variable(default is 0, unless the variable was initialized with a different value in an assignment statment][Line=the first line number the variable appears in][Line=the second line number the variable appears in]  and so on for all the other lines the variable is referenced in 
+
+example of a symbol table:
+[Var=x][Mem=1][Line=6][Line=7][Line=20]
+[var=y][Mem=0][Line=1]
+
+- Second: The syntax tree; which is basically the same output of the previous assignment but with each non void(Integer or Boolean) node followed by its data type in square brackets.
+
+ All operators are considered of Integer types except for the LessThan and Equal operators; they're considered of Boolean type.
+ Numbers and IDs are also considered of Integer Types.
+ The rest of the node types can be considered of Void types, which doesn't need to get printed(the data type not the entire node).
+
+example of an Integer node: [ID][x][Integer]
+example of a Boolean node: [Oper][LessThan][Boolean]
+example of a void node: [Read][x]
+
+note: In this step you're also expected to preform type checking, so for example if an 'if' is followed by something other than a Boolean node, print to the terminal that there is a problem with that explaining the issue. So something along the lines of "Error, an "if" should be followed by a Boolean".
+
+
+
+***************************************************************************************************
+### Assignment-4  ( Code Generator )
 
 
