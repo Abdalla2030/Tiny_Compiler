@@ -1,0 +1,30 @@
+========== Scanning ==========
+[1] x [ID]
+[1] = [Equal]
+[1] 10 [Num]
+[1] ; [SemiColon]
+[2] repeat [Repeat]
+[3] if [If]
+[3] x [ID]
+[3] > [Error]
+[3] 5 [Num]
+[3] then [Then]
+[4] write [Write]
+[4] x [ID]
+[4] ; [SemiColon]
+[5] end [End]
+[6] x [ID]
+[6] := [Assign]
+[6] x [ID]
+[6] - [Minus]
+[6] 1 [Num]
+[7] until [Until]
+[7] x [ID]
+[7] = [Equal]
+[7] 0 [Num]
+[7] ; [SemiColon]
+[27]  [EndFile]
+=============================
+
+
+
