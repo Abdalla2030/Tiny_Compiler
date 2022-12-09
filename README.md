@@ -27,7 +27,7 @@ no procedures - no declarations
 
 * Output
 
-![](Scanning/Scanning%20Example#1.jpg)
+![](Phase1(Scanning)/Scanning%20Example#1.jpg)
 ![](Scanning/Scanning%20Example#2.jpg)
 
 
