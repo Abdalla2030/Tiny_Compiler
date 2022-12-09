@@ -77,7 +77,9 @@ Program output: The program should output
 [Var=variable name][Mem=initial value of the variable(default is 0, unless the variable was initialized with a different value in an assignment statment][Line=the first line number the variable appears in][Line=the second line number the variable appears in]  and so on for all the other lines the variable is referenced in 
 
 example of a symbol table:
+
 [Var=x][Mem=1][Line=6][Line=7][Line=20]
+
 [var=y][Mem=0][Line=1]
 
 - Second: The syntax tree; which is basically the same output of the previous assignment but with each non void(Integer or Boolean) node followed by its data type in square brackets.
@@ -87,13 +89,14 @@ example of a symbol table:
  The rest of the node types can be considered of Void types, which doesn't need to get printed(the data type not the entire node).
 
 example of an Integer node: [ID][x][Integer]
+
 example of a Boolean node: [Oper][LessThan][Boolean]
+
 example of a void node: [Read][x]
 
 note: In this step you're also expected to preform type checking, so for example if an 'if' is followed by something other than a Boolean node, print to the terminal that there is a problem with that explaining the issue. So something along the lines of "Error, an "if" should be followed by a Boolean".
 
-
-
+###### Output
 ***************************************************************************************************
 ### Assignment-4  ( Code Generator )
 
