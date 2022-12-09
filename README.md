@@ -13,17 +13,17 @@ Program output: The scanner should output a text file that contains the tokens f
 [number of line the token was found in starting from 1 in square brackets] [the actual string that represents the token in the input file] [a string that represents the token type in round brackets] 
 
 TINY language rules:
-sequence of statements separated by ;
-Comments {}
-I/O read write
-math expressions integers only, + - * / ^
-boolean only in if and repeat conditions < = and two mathematical expressions
-repeat-statement: repeat until (boolean)
-if-statement: if (boolean) then [else] end
-variable names can include only alphabetic characters(a:z or A:Z) and underscores
-variables are declared simply by assigning values to them :=
-all variables are integers
-no procedures - no declarations
+- sequence of statements separated by ;
+- Comments {}
+- I/O read write
+- math expressions integers only, + - * / ^
+- boolean only in if and repeat conditions < = and two mathematical expressions
+- repeat-statement: repeat until (boolean)
+- if-statement: if (boolean) then [else] end
+- variable names can include only alphabetic characters(a:z or A:Z) and underscores
+- variables are declared simply by assigning values to them :=
+- all variables are integers
+- no procedures - no declarations
 
 * Output
 
