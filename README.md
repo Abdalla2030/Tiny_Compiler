@@ -47,19 +47,19 @@ Program output: The program should output the terminal(leaf) nodes of the parse 
 
 ## TINY language grammar rules:
 
-program -> stmtseq
-stmtseq -> stmt { ; stmt }
-stmt -> ifstmt | repeatstmt | assignstmt | readstmt | writestmt
-ifstmt -> if expr then stmtseq [ else stmtseq ] end
-repeatstmt -> repeat stmtseq until expr
-assignstmt -> identifier := expr
-readstmt -> read identifier
-writestmt -> write expr
-expr -> mathexpr [ (<|=) mathexpr ]
-mathexpr -> term { (+|-) term }    left associative
-term -> factor { (*|/) factor }    left associative
-factor -> newexpr { ^ newexpr }    right associative
-newexpr -> ( mathexpr ) | number | identifier
+- program -> stmtseq
+- stmtseq -> stmt { ; stmt }
+- stmt -> ifstmt | repeatstmt | assignstmt | readstmt | writestmt
+- ifstmt -> if expr then stmtseq [ else stmtseq ] end
+- repeatstmt -> repeat stmtseq until expr
+- assignstmt -> identifier := expr
+- readstmt -> read identifier
+- writestmt -> write expr
+- expr -> mathexpr [ (<|=) mathexpr ]
+- mathexpr -> term { (+|-) term }    left associative
+- term -> factor { (*|/) factor }    left associative
+- factor -> newexpr { ^ newexpr }    right associative
+- newexpr -> ( mathexpr ) | number | identifier
 
 ###### Output
 ![Parsing Example](https://user-images.githubusercontent.com/90295968/206790840-433aeaa6-56bf-4c74-89ae-dc41fce3b6ff.jpg)
