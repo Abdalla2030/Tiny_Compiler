@@ -1,9 +1,9 @@
 # Tiny_Compiler
 Assignments of Compilers Course ( CS423 )
 
-Assignments
+# Assignments
 ***************************************************************************************************
-Assignment-1  ( Scanning )
+### Assignment-1  ( Scanning )
 
 Write a program in C++ that implements the scanning(Tokenization) step of a custom compiler built to compile the TINY programming language 
 
@@ -30,7 +30,7 @@ TINY language rules:
 ![Scanning Example#1](https://user-images.githubusercontent.com/90295968/206789503-d179dbea-5b00-4109-af29-69971c83102d.jpg)
 ![Scanning Example#2](https://user-images.githubusercontent.com/90295968/206789484-f5c3ca2a-e6dd-48a9-91c9-269a868aac18.jpg)
 ***************************************************************************************************
-Assignment-2  ( Parsing )
+### Assignment-2  ( Parsing )
 
 Write a program in C++ that implements the analyzer step of our custom compiler of the TINY programming language based on the grammar rules of the language.
 
@@ -64,6 +64,6 @@ Program output: The program should output the terminal(leaf) nodes of the parse 
 ###### Output
 ![Parsing Example](https://user-images.githubusercontent.com/90295968/206790840-433aeaa6-56bf-4c74-89ae-dc41fce3b6ff.jpg)
 ***************************************************************************************************
-Assignment-3  ( Code Generator )
+### Assignment-3  ( Code Generator )
 
 
