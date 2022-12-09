@@ -32,8 +32,37 @@ TINY language rules:
 ***************************************************************************************************
 Assignment-2  ( Parsing )
 
+Write a program in C++ that implements the analyzer step of our custom compiler of the TINY programming language based on the grammar rules of the language.
+
+Program input: The scanner will take the path of a source code file written in the TINY programming language as an input; You can find an example of an input file in the file called `input.txt`.
 
 
+- You will also find a suggested data structure to the tree node that you may use, however, this's not mandatory. You may create a different format to the tree nodes as long as your code is clean, readable, performant and follows the SOLID principles.
+
+Program output: The program should output the terminal(leaf) nodes of the parse tree of the input file to the terminal or throw an exception once an error was found. You may use the `printTree` method found in the attached file called `CompilersTask_2_Parser.cpp` or if you decide to represent the tree nodes with a different data structure make sure your output follows the same format as in this method.
+
+- The number of spaces to output before each node represents the level on which the node relies on(The order of the rule the node represented in related to the program node which is level 0).
+
+- Eech level in the tree is 3 spaces apart than its prior.
+
+## TINY language grammar rules:
+
+program -> stmtseq
+stmtseq -> stmt { ; stmt }
+stmt -> ifstmt | repeatstmt | assignstmt | readstmt | writestmt
+ifstmt -> if expr then stmtseq [ else stmtseq ] end
+repeatstmt -> repeat stmtseq until expr
+assignstmt -> identifier := expr
+readstmt -> read identifier
+writestmt -> write expr
+expr -> mathexpr [ (<|=) mathexpr ]
+mathexpr -> term { (+|-) term }    left associative
+term -> factor { (*|/) factor }    left associative
+factor -> newexpr { ^ newexpr }    right associative
+newexpr -> ( mathexpr ) | number | identifier
+
+###### Output
+![Parsing Example](https://user-images.githubusercontent.com/90295968/206790840-433aeaa6-56bf-4c74-89ae-dc41fce3b6ff.jpg)
 ***************************************************************************************************
 Assignment-3  ( Code Generator )
 
