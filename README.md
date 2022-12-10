@@ -26,8 +26,10 @@ TINY language rules:
 - no procedures - no declarations
 
 ###### Output
-
+* Example #1
 ![Scanning Example#1](https://user-images.githubusercontent.com/90295968/206789503-d179dbea-5b00-4109-af29-69971c83102d.jpg)
+
+* Example #2
 ![Scanning Example#2](https://user-images.githubusercontent.com/90295968/206789484-f5c3ca2a-e6dd-48a9-91c9-269a868aac18.jpg)
 ***************************************************************************************************
 ### Assignment-2  ( Parsing )
