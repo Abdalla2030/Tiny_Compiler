@@ -108,7 +108,7 @@ note: In this step you're also expected to preform type checking, so for example
 ***************************************************************************************************
 ### Assignment-4  ( Code Generator )
 
-***Finaly***Run a simulation of the compilation of the code as if the program is actually running. The only parts that will interact with the terminal in this step are `Read` and `Write` statements. The rest should be handled internally by your code.
+**Finaly** Run a simulation of the compilation of the code as if the program is actually running. The only parts that will interact with the terminal in this step are `Read` and `Write` statements. The rest should be handled internally by your code.
 
 example of what a `Read x` statement will do:
 print this to the terminal "Enter x:" then wait for the user to input that value.
