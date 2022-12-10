@@ -98,8 +98,10 @@ note: In this step you're also expected to preform type checking, so for example
 
 ###### Output
 * Symbol Table
+
   ![symbol table](https://user-images.githubusercontent.com/90295968/206817180-293ed299-3a9c-4b74-8279-8c6ab8cd600f.jpg)
 * Syntax Tree with Data Types
+
 ![syntax tree with data types](https://user-images.githubusercontent.com/90295968/206817610-2a16c24b-a041-417b-9243-5e5013d118ee.jpg)
 ***************************************************************************************************
 ### Assignment-4  ( Code Generator )
