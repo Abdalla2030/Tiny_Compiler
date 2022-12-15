@@ -857,7 +857,7 @@ void Analyze(TreeNode* node, SymbolTable* symbol_table){
     }
     // check data type ( INTEGER or BOOKEAN ) for OPER NODE
     if(node->node_kind == OPER_NODE){
-        if(node->oper==LESS_THAN ||  node->oper== EQUAL ){
+        if(node->oper == LESS_THAN ||  node->oper == EQUAL ){
                 node->expr_data_type = BOOLEAN;
         }
         else {
@@ -869,11 +869,19 @@ void Analyze(TreeNode* node, SymbolTable* symbol_table){
                 node->expr_data_type=INTEGER;
     }
 
-    /*
-         ////////////////////////////////////////////////
-         We should handle if data type not INTEGER
-         ////////////////////////////////////////////////
-    */
+    // Checking Data Types
+    if(node->node_kind == IF_NODE && node->child[0]->expr_data_type != BOOLEAN) {
+            cout<<"ERROR IF EXP Should Be Boolean"<<endl;
+    }
+    if(node->node_kind == WRITE_NODE && node->child[0]->expr_data_type != INTEGER){
+            cout<<"ERROR Variable Type Should Be Integer"<<endl;
+    }
+   if(node->node_kind == ASSIGN_NODE && node->child[0]->expr_data_type != INTEGER){
+            cout<<"ERROR Assigned Variable Type Should Be Integer"<<endl;
+   }
+  if(node->node_kind==REPEAT_NODE && node->child[1]->expr_data_type != BOOLEAN){
+         cout<<"ERROR Repeat EXP Should Be Boolean"<<endl;
+  } //  [Repeat]--> tree->child[1]=Expr(pci, ppi);
 
     if(node->sibling) { // Analyze sibling node if found
         Analyze(node->sibling, symbol_table);
