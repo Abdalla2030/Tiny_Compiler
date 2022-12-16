@@ -1,0 +1,184 @@
+Start StmtSeq
+Start Stmt
+Start ReadStmt
+Start Match
+[6] x (ID)
+Start Match
+[6] ; (SemiColon)
+End ReadStmt
+End Stmt
+Start Match
+[7] if (If)
+Start Stmt
+Start IfStmt
+Start Match
+[7] 0 (Num)
+Start Expr
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[7] < (LessThan)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+Start Match
+[7] x (ID)
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[7] then (Then)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+End Expr
+Start Match
+[8] fact (ID)
+Start StmtSeq
+Start Stmt
+Start AssignStmt
+Start Match
+[8] := (Assign)
+Start Match
+[8] 1 (Num)
+Start Expr
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[8] ; (SemiColon)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+End Expr
+End AssignStmt
+End Stmt
+Start Match
+[9] repeat (Repeat)
+Start Stmt
+Start RepeatStmt
+Start Match
+[10] fact (ID)
+Start StmtSeq
+Start Stmt
+Start AssignStmt
+Start Match
+[10] := (Assign)
+Start Match
+[10] fact (ID)
+Start Expr
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[10] * (Times)
+End NewExpr
+End Factor
+Start Match
+[10] x (ID)
+Start Factor
+Start NewExpr
+Start Match
+[10] ; (SemiColon)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+End Expr
+End AssignStmt
+End Stmt
+Start Match
+[11] x (ID)
+Start Stmt
+Start AssignStmt
+Start Match
+[11] := (Assign)
+Start Match
+[11] x (ID)
+Start Expr
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[11] - (Minus)
+End NewExpr
+End Factor
+End Term
+Start Match
+[11] 1 (Num)
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[12] until (Until)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+End Expr
+End AssignStmt
+End Stmt
+End StmtSeq
+Start Match
+[12] x (ID)
+Start Expr
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[12] = (Equal)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+Start Match
+[12] 0 (Num)
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[12] ; (SemiColon)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+End Expr
+End RepeatStmt
+End Stmt
+Start Match
+[13] write (Write)
+Start Stmt
+Start WriteStmt
+Start Match
+[13] fact (ID)
+Start Expr
+Start MathExpr
+Start Term
+Start Factor
+Start NewExpr
+Start Match
+[14] end (End)
+End NewExpr
+End Factor
+End Term
+End MathExpr
+End Expr
+End WriteStmt
+End Stmt
+End StmtSeq
+Start Match
+[14]  (EndFile)
+End IfStmt
+End Stmt
+End StmtSeq
