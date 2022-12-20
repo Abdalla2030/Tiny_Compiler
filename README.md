@@ -116,4 +116,6 @@ print this to the terminal "Enter x:" then wait for the user to input that value
 example of what a `Write 5` statement will do:
 print this to the terminal "val: 5" 
 
+###### Output ( Run Program )
 
+![com](https://user-images.githubusercontent.com/90295968/208552299-1e2ad4a4-80ea-4141-97d2-008e68e906a0.jpg)
