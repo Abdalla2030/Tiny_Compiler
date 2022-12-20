@@ -879,9 +879,9 @@ void Analyze(TreeNode* node, SymbolTable* symbol_table){
    if(node->node_kind == ASSIGN_NODE && node->child[0]->expr_data_type != INTEGER){
             cout<<"ERROR Assigned Variable Type Should Be Integer"<<endl;
    }
-  if(node->node_kind==REPEAT_NODE && node->child[1]->expr_data_type != BOOLEAN){
+   if(node->node_kind==REPEAT_NODE && node->child[1]->expr_data_type != BOOLEAN){
          cout<<"ERROR Repeat EXP Should Be Boolean"<<endl;
-  } //  [Repeat]--> tree->child[1]=Expr(pci, ppi);
+   } //  [Repeat]--> tree->child[1] = Expr(pci, ppi);
 
     if(node->sibling) { // Analyze sibling node if found
         Analyze(node->sibling, symbol_table);
@@ -956,12 +956,50 @@ int checkOper(TreeNode* node, SymbolTable* symbol_table, int* programVariables){
 /////////////////////////////////////////////////////////////
 void RunProgram(TreeNode* node, SymbolTable* symbol_table, int* programVariables){
 
+    if(node->node_kind == READ_NODE){ // read node
+       cout<< "Enter "<<node->id<< ": ";
+        int num ;
+        cin >> num ;
+        programVariables[symbol_table->Find(node->id)->memloc] = num ;
+    }
+
+    if(node->node_kind == WRITE_NODE){ // find the value of variable in the symbol table
+        int num = checkOper(node->child[0], symbol_table, programVariables);
+        cout<<"Val: "<<num<<endl;
+    }
+
+    if(node->node_kind==REPEAT_NODE){ // repeat stmtseq until expr
+        do{ // repeat stmtseq
+           RunProgram(node->child[0], symbol_table, programVariables);
+        }
+        while(!checkOper(node->child[1], symbol_table, programVariables));
+    }
+
+     if(node->node_kind == IF_NODE ){ // if expr then stmtseq [ else stmtseq ] end
+        bool condition = checkOper(node->child[0], symbol_table, programVariables);
+        if(condition){
+            RunProgram(node->child[1], symbol_table, programVariables);
+        }
+        else if(node->child[2]){
+            RunProgram(node->child[2], symbol_table, programVariables);
+        }
+    }
+
+    if(node->node_kind == ASSIGN_NODE){ //  identifier := expr
+        int num = checkOper(node->child[0], symbol_table, programVariables);
+        programVariables[symbol_table->Find(node->id)->memloc] = num;
+    }
+
+    if(node->sibling){ // check  sibling node if found
+            RunProgram(node->sibling, symbol_table, programVariables);
+    }
+
 }
 /////////////////////////////////////////////////////////////
 void StartingRun(TreeNode* syntax_tree, SymbolTable* symbol_table){
     int* programVariables=new int[symbol_table->num_vars];
     for(int i=0;i<symbol_table->num_vars;i++){
-        programVariables[i]=0;
+        programVariables[i] = 0;
     }
     RunProgram(syntax_tree, symbol_table, programVariables);
     delete[] programVariables;
@@ -970,10 +1008,8 @@ void StartingRun(TreeNode* syntax_tree, SymbolTable* symbol_table){
 void StartCompiling(CompilerInfo* Tiny){
 
      TreeNode* syntax_tree = Parse(Tiny);
-      SymbolTable symbol_table;
-      Analyze(syntax_tree, &symbol_table);
-
-
+     SymbolTable symbol_table;
+     Analyze(syntax_tree, &symbol_table);
     cout<<"========== Analyzing  =========="<<endl;
      symbol_table.Print();
      cout<<"============================="<<endl;
@@ -995,10 +1031,10 @@ void StartCompiling(CompilerInfo* Tiny){
 int main(){
 
     CompilerInfo Tiny("input.txt", "output.txt", "debug.txt");
-     // StartScanning(&Tiny);
+    // StartScanning(&Tiny);
      // StartParsing(&Tiny);
     // StartAnalyzing(&Tiny);
-       StartCompiling(&Tiny);
+     StartCompiling(&Tiny);
     return 0;
 }
 ////////////////////////////////////////////////////////////////////////////////
